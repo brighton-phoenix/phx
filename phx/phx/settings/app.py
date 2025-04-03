@@ -207,7 +207,7 @@ SITE_ROOT = django_root()
 MEDIA_ROOT = app_root('media')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = app_root('static')
+STATIC_ROOT = app_root('staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
