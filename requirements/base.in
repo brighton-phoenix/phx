@@ -6,6 +6,8 @@ django-ckeditor
 django-environ
 django-nested-admin
 django-import-export
+django-storages
+boto3
 easy-thumbnails
 facebook-sdk
 psycopg2-binary

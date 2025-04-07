@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'admin_ordering',
     'import_export',
+    'storages',
 
     # PHX
     'components.apps.ComponentsConfig',
@@ -203,12 +204,32 @@ AUTH_PASSWORD_VALIDATORS = [
 # Files
 
 SITE_ROOT = django_root()
+USE_OBJECT_STORAGE = os.getenv('USE_OBJECT_STORAGE') == 'TRUE'
 
-MEDIA_ROOT = app_root('media')
-MEDIA_URL = '/media/'
+if USE_OBJECT_STORAGE:
+    # Cloudflare R2 Object Storage settings
+    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')
+    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+    AWS_S3_CUSTOM_DOMAIN = os.getenv('AWS_S3_CUSTOM_DOMAIN')
 
-STATIC_ROOT = app_root('static')
-STATIC_URL = '/static/'
+    # static setting
+    STATIC_LOCATION = 'static'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+    STATICFILES_STORAGE = 'phx.storage_backends.StaticStorage'
+
+    # media settings
+    PUBLIC_MEDIA_LOCATION = 'media'
+    MEDIA_URL = f'ttps://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+    DEFAULT_FILE_STORAGE = 'phx.storage_backends.PublicMediaStorage'
+
+else:
+    MEDIA_ROOT = app_root('media')
+    MEDIA_URL = '/media/'
+
+    STATIC_ROOT = app_root('static')
+    STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [
