@@ -205,7 +205,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 SITE_ROOT = django_root()
 
-MEDIA_ROOT = app_root('media')
+MEDIA_ROOT = '/var/data/media'
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = app_root('staticfiles')
