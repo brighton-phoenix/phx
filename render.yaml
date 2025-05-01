@@ -1,0 +1,67 @@
+services:
+- type: web
+  name: phx-web
+  runtime: python
+  repo: https://github.com/brighton-phoenix/phx
+  plan: starter
+  envVars:
+  - key: ALLOWED_HOSTS
+    value: phx-bo8g.onrender.com,brightonphoenix.org.uk
+  - key: EMAIL_BACKEND
+    value: anymail.backends.mailgun.EmailBackend
+  - key: DJANGO_SETTINGS_MODULE
+    value: phx.settings.production
+  - key: CONTACT_EMAIL
+    value: club@brightonphoenix.org.uk
+  - key: DEBUG
+    value: off
+  - key: DATABASE_URL
+    sync: false
+  - key: TWITTER_OAUTH_SECRET_KEY
+    sync: false
+  - key: TWITTER_OAUTH_TOKEN_KEY
+    sync: false
+  - key: TWITTER_SECRET_KEY
+    sync: false
+  - key: TWITTER_CONSUMER_KEY
+    sync: false
+  - key: MAILGUN_SENDER_DOMAIN
+    sync: false
+  - key: MAILGUN_API_KEY
+    sync: false
+  - key: ANALYTICS
+    sync: false
+  - key: SECRET_KEY
+    sync: false
+  region: frankfurt
+  buildCommand: npm install -g npm-run-all && npm install -g husky && npm install
+    -g postcss && npm install && npm run build && pip install -r requirements/production.txt
+  startCommand: cd phx; python manage.py migrate --settings=phx.settings.production;
+    python manage.py collectstatic --no-input --settings=phx.settings.production;
+    gunicorn --env DJANGO_SETTINGS_MODULE=phx.settings.production phx.wsgi:application
+  domains:
+  - www.brightonphoenix.org.uk
+  - brightonphoenix.org.uk
+  disk:
+    name: disk
+    mountPath: /opt/render/project/src/media
+    sizeGB: 10
+- type: pserv
+  name: phx-db
+  runtime: image
+  image:
+    url: docker.io/library/postgres:15
+  plan: starter
+  envVars:
+  - key: PORT
+    value: 5432
+  - key: PGDATA
+    value: /var/lib/postgresql/data/pgdata
+  - key: POSTGRES_PASSWORD
+    sync: false
+  region: frankfurt
+  disk:
+    name: disk
+    mountPath: /var/lib/postgresql/data
+    sizeGB: 1
+version: "1"
