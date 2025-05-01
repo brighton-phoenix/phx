@@ -13,11 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.views.static import serve
 from django.conf import settings
 from django.conf.urls import include
 from django.conf.urls.static import static
 from django.urls import path, re_path
+from django.views.static import serve
 from error.views import Error400View, Error403View, Error404View, error_500
 
 from .admin import phx_admin
@@ -38,7 +38,8 @@ urlpatterns = [
     re_path(r'^_nested_admin/', include('nested_admin.urls')),
 
     # HACK: serve media from filesystem
-    re_path(r'^media/(?P<path>.*)$',serve,{'document_root':settings.MEDIA_ROOT}),
+    re_path(r'^media/(?P<path>.*)$', serve,
+            {'document_root': settings.MEDIA_ROOT}),
 
     # pages - must be last
     re_path(r'^(?P<slug>.*)/', include('pages.urls')),
