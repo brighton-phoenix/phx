@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'phx.urls'
@@ -207,7 +208,7 @@ SITE_ROOT = django_root()
 MEDIA_ROOT = app_root('media')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = app_root('static')
+STATIC_ROOT = app_root('staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
