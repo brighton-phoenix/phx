@@ -116,7 +116,7 @@ pluggy==1.5.0
     # via
     #   -r test.txt
     #   pytest
-psycopg2-binary==2.9.9
+psycopg2-binary==2.9.10
     # via -r test.txt
 pycodestyle==2.11.1
     # via
