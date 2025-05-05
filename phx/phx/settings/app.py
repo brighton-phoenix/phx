@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'error.apps.ErrorConfig',
     'offline.apps.OfflineConfig',
     'athletes.apps.AthletesConfig',
+    'footer.apps.FooterConfig',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,7 @@ TEMPLATES = [
 
                 # PHX
                 'phx.context_processors.global_config.global_config',
+                'phx.context_processors.footer.footer_data',
                 'phx.context_processors.nav.nav',
             ],
             'libraries': {

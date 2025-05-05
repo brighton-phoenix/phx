@@ -1,17 +1,23 @@
 <footer class="Footer">
   <div class="Footer-comms">
     <div class="Footer-commsWrap u-component">
-      <div class="Footer-commsBlock">
-        <h4 class="Footer-commsTitle">
-          Contact_
-        </h4>
-        <p class="Footer-commsText">
-          Get in touch
-        </p>
-        <a class="Footer-cta" href="/contact/">
-          Contact us
-        </a>
-      </div>
+      {% for section in footer_sections %}
+        <div class="Footer-commsBlock">
+          <h4 class="Footer-commsTitle">
+            {{ section.header }}
+          </h4>
+          <p class="Footer-commsText">
+            {{ section.sub_header }}
+          </p>
+          {% for link in section.links.all %}
+            <div>
+              <a class="Footer-cta" href="{{ link.path }}">
+                {{ link.text }}
+              </a> 
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
       <div class="Footer-commsBlock">
         <h4 class="Footer-commsTitle">
           Keep up to date_

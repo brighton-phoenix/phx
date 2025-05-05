@@ -73,7 +73,7 @@ cd requirements && pip-sync local.txt
 - You can automatically populate the site with data using the following command:
 
   ```
-  python3 manage.py loaddata fixtures results contact pages news home gallery
+  python3 manage.py loaddata fixtures results contact pages news home gallery footer
   ```
 
 - Alternatively this can be done manually - from the admin area create a page for every top-level section of the site:
