@@ -1,0 +1,20 @@
+[
+    {
+        "model": "footer.footerlink",
+        "pk": 1,
+        "fields": {
+            "text": "Contact us",
+            "path": "/contact/",
+            "order": 0,
+            "section": 1
+        }
+    },
+    {
+        "model": "footer.footersection",
+        "pk": 1,
+        "fields": {
+            "header": "Contact_",
+            "sub_header": "Get in touch"
+        }
+    }
+]
