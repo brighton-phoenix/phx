@@ -16,7 +16,7 @@ certifi==2024.7.4
     #   twitter
 charset-normalizer==3.3.2
     # via requests
-diff-match-patch==20230430
+diff-match-patch==20241021
     # via django-import-export
 django==5.0.11
     # via
@@ -37,7 +37,7 @@ django-environ==0.11.2
     # via -r base.in
 django-extensions==3.2.3
     # via -r base.in
-django-import-export==4.1.1
+django-import-export==4.3.8
     # via -r base.in
 django-js-asset==2.2.0
     # via
@@ -71,7 +71,7 @@ soupsieve==2.5
     # via beautifulsoup4
 sqlparse==0.5.0
     # via django
-tablib==3.5.0
+tablib==3.8.0
     # via django-import-export
 twitter==1.19.6
     # via -r base.in
