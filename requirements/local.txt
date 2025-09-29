@@ -33,7 +33,7 @@ charset-normalizer==3.3.2
     #   requests
 click==8.1.7
     # via pip-tools
-diff-match-patch==20230430
+diff-match-patch==20241021
     # via
     #   -r test.txt
     #   django-import-export
@@ -62,7 +62,7 @@ django-environ==0.11.2
     # via -r test.txt
 django-extensions==3.2.3
     # via -r test.txt
-django-import-export==4.1.1
+django-import-export==4.3.10
     # via -r test.txt
 django-js-asset==2.2.0
     # via
@@ -196,7 +196,7 @@ sqlparse==0.5.0
     #   -r test.txt
     #   django
     #   django-debug-toolbar
-tablib==3.5.0
+tablib==3.8.0
     # via
     #   -r test.txt
     #   django-import-export
