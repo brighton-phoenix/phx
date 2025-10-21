@@ -58,7 +58,7 @@ django-js-asset==2.2.0
     #   django-ckeditor
 django-nested-admin==4.0.2
     # via -r base.txt
-easy-thumbnails==2.8.5
+easy-thumbnails==2.10.1
     # via -r base.txt
 et-xmlfile==1.1.0
     # via
