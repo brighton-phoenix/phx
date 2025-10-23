@@ -39,7 +39,10 @@ ADMINS = [x.split(':') for x in env.list('DJANGO_ADMINS', default=[])]
 # IP addresses to enable the debug toolbar
 INTERNAL_IPS = env.list('INTERNAL_IPS', default=[])
 
+RENDER_HOST = env.str('RENDER_EXTERNAL_HOSTNAME', None)
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
+if RENDER_HOST:
+    ALLOWED_HOSTS.append(RENDER_HOST)
 
 SITE_URL = env.str('SITE_URL', default='http://localhost:8000/')
 
