@@ -56,7 +56,7 @@ django-anymail[mailgun]==10.3
     # via -r test.txt
 django-ckeditor==6.7.1
     # via -r test.txt
-django-debug-toolbar==4.4.2
+django-debug-toolbar==6.0.0
     # via -r local.in
 django-environ==0.11.2
     # via -r test.txt
