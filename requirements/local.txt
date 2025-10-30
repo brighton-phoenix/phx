@@ -54,7 +54,7 @@ django-admin-ordering==0.18.0
     # via -r test.txt
 django-anymail[mailgun]==10.3
     # via -r test.txt
-django-ckeditor==6.7.1
+django-ckeditor==6.7.3
     # via -r test.txt
 django-debug-toolbar==6.0.0
     # via -r local.in
