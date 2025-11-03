@@ -45,7 +45,7 @@
     "webpack-cli": "^6.0.1"
   },
   "dependencies": {
-    "iframe-resizer": "^4.4.2",
+    "iframe-resizer": "^5.5.7",
     "normalize.css": "^8.0.1",
     "suitcss-base": "^5.0.0"
   }
