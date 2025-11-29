@@ -106,7 +106,7 @@ pyflakes==3.2.0
     # via flake8
 pytest==8.2.2
     # via pytest-django
-pytest-django==4.8.0
+pytest-django==4.11.1
     # via -r test.in
 python-dateutil==2.9.0.post0
     # via faker
