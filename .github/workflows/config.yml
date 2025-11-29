@@ -31,7 +31,6 @@ jobs:
         with:
           path: |
             node_modules
-            venv
           key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/requirements/ci.txt') }}
           restore-keys: |
             ${{ runner.os }}-build-
