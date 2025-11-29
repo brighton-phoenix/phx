@@ -37,7 +37,7 @@
     "postcss-custom-media": "^10.0.6",
     "postcss-custom-properties": "^13.3.10",
     "postcss-easy-import": "^4.0.0",
-    "prettier": "^3.3.1",
+    "prettier": "^3.7.3",
     "stylelint": "^16.25.0",
     "stylelint-config-suitcss": "^21.0.0",
     "stylelint-selector-bem-pattern": "^4.0.1",
