@@ -8,10 +8,10 @@ updates:
     groups:
       python-patches:
         update-types:
-          - "version-update:patch"
+          - "patch"
       python-minors:
         update-types:
-          - "version-update:minor"
+          - "minor"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -20,7 +20,7 @@ updates:
     groups:
       npm-patches:
         update-types:
-          - "version-update:patch"
+          - "patch"
       npm-minors:
         update-types:
-          - "version-update:minor"
+          - "minor"
