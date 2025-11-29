@@ -62,7 +62,7 @@ django-environ==0.11.2
     # via -r test.txt
 django-extensions==3.2.3
     # via -r test.txt
-django-import-export==4.3.12
+django-import-export==4.3.14
     # via -r test.txt
 django-js-asset==2.2.0
     # via
