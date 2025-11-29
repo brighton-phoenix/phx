@@ -10,6 +10,8 @@ How to install the app locally.
 * Python 3
 * PostgreSQL
 
+(a flake.nix file is provided for nix users)
+
 
 Once you have cloned this repo, run through the following steps:
 
