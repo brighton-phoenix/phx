@@ -130,7 +130,7 @@ pytest==8.2.2
     # via
     #   -r test.txt
     #   pytest-django
-pytest-django==4.8.0
+pytest-django==4.11.1
     # via -r test.txt
 python-dateutil==2.9.0.post0
     # via
