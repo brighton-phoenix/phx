@@ -24,7 +24,7 @@
         devShells.default = pkgs.mkShell {
           buildInputs = [
             pythonEnv
-            pkgs.nodejs_20
+            pkgs.nodejs_21
             pkgs.postgresql_15
             pkgs.podman
             pkgs.podman-compose
@@ -47,13 +47,13 @@
             # Start postgres if not running using podman-compose
             if ! podman ps --format "{{.Names}}" | grep -q "^phx-postgres$"; then
               echo "🗄️  Starting PostgreSQL..."
-              podman-compose up -d > /dev/null 2>&1
+              podman-compose up -d
               echo "✓ PostgreSQL started"
             else
               echo "🗄️  PostgreSQL is already running"
             fi
             echo ""
-             
+            
             source env/bin/activate
           '';
         };
